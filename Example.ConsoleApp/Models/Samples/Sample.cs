@@ -4,7 +4,7 @@
 
 namespace Example.ConsoleApp.Models.Samples
 {
-    internal class Sample
+    public class Sample
     {
     }
 }
