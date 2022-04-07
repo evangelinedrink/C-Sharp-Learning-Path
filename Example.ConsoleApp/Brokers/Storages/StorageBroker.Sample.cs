@@ -6,7 +6,7 @@ using Example.ConsoleApp.Models.Samples;
 
 namespace Example.ConsoleApp.Brokers.Storages
 {
-    internal partial class StorageBroker : IStorageBroker
+    public partial class StorageBroker : IStorageBroker
     {
         List<Sample> Samples = new List<Sample>();
         public Sample InsertSample(Sample sample)

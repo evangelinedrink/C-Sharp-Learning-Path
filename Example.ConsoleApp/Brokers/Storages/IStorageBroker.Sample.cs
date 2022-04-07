@@ -6,7 +6,7 @@ using Example.ConsoleApp.Models.Samples;
 
 namespace Example.ConsoleApp.Brokers.Storages
 {
-    internal partial interface IStorageBroker
+    public partial interface IStorageBroker
     {
         Sample InsertSample(Sample sample);
     }
