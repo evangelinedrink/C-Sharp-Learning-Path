@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Example.ConsoleApp.Brokers.Storages;
+using Example.ConsoleApp.Models.Samples;
 using Example.ConsoleApp.Services.Foundations.Samples;
 using Moq;
+using Tynamix.ObjectFiller;
 
 namespace Example.Tests.Unit.Services.Foundations.Samples
 {
-    internal class SampleServiceTests
+    public partial class SampleServiceTests
     {
         private readonly Mock<IStorageBroker> storageBrokerMock;
         private readonly ISampleService sampleService;
@@ -24,5 +26,12 @@ namespace Example.Tests.Unit.Services.Foundations.Samples
             this.sampleService = new SampleService(
                 storageBroker: this.storageBrokerMock.Object);
         }
+
+        private static Sample CreateRandomSample() =>
+            CreateSampleFiller().Create();
+
+        private static Filler<Sample> CreateSampleFiller() =>
+            new Filler<Sample>();
+
     }
 }
