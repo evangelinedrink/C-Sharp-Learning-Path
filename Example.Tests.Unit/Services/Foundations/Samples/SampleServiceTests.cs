@@ -2,11 +2,6 @@
 // Copyright (c) MumsWhoCode. All rights reserved.
 // ------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Example.ConsoleApp.Brokers.Storages;
 using Example.ConsoleApp.Models.Samples;
 using Example.ConsoleApp.Services.Foundations.Samples;
