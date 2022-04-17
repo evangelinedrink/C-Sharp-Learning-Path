@@ -19,11 +19,11 @@ namespace Example.Tests.Unit.Services.Foundations.Samples
             Sample randomSample = CreateRandomSample();
             Sample inputSample = randomSample;
             Sample persistedSample = inputSample; //This is the sample that was saved in the database by the Storage Broker
-            Sample expectedSample = persistedSample.DeepClone();
+            Sample expectedSample = persistedSample.DeepClone(); //This should technically work, but there is no comparison between actualSample and expectedSample in line 36 
             //DeepClone() is used to make a copy of the data going into the database and then have it in a separate section
             //This is done because if someone tampers the data within the database, the expectedSample would have the data before it went into the database
             //This will help with the comparison betweend what we expect the data/model to be (expectedSample) and what is actually in the database
-            //Sample expectedSample = persistedSample.DeepClone(); //Whatever that is saved (in this case it is persistedSample) should be the expected returned value from the database
+            //Sample expectedSample = persistedSample.DeepClone(); //Whatever that is saved (in this case it is persistedSample) should be the expected returned value from the database  
 
             this.storageBrokerMock.Setup(broker =>
                 broker.InsertSample(inputSample))
